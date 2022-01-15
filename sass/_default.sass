@@ -1,6 +1,5 @@
 html
 	box-sizing: border-box
-	--main-color: #272727
 
 *,
 *:after,
@@ -12,7 +11,7 @@ body
 	font-family: Montserrat, sans-serif
 	font-size: 18px
 	font-weight: 400
-	color: var(--main-color)
+	color: $main-color
 
 img
 	max-width: 100%
@@ -47,6 +46,10 @@ p
 	max-width: 1180px
 	margin: auto
 
+@media (max-width: 1260px)
+	.container
+		padding: 0 60px
+
 @media (max-width: 1200px)
 	.container
 		padding: 0 72px
@@ -57,4 +60,4 @@ p
 
 @media (max-width: 580px)
 	.container
-		padding: 0 20
+		padding: 0 20px

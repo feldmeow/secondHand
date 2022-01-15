@@ -5,20 +5,17 @@
 		display: flex
 		justify-content: space-between
 	&__navigation
-		display: flex
-		align-items: center
 	&__control
 		&-list
-			width: 132px
+			gap: 30px
 			display: flex
-			justify-content: space-between
 			align-items: center
 		&-item
 			display: block
 			height: 24px
 	&__btn
 		height: 100%
-		background-color: #fff
+		background-color: $white
 		background-repeat: no-repeat
 		background-position: center
 		border: none
@@ -35,14 +32,24 @@
 			display: block
 			width: 22px
 			background-image: url(/img/person.svg)
+
 .navigation
+	display: flex
+	font-weight: 300
+	line-height: 22px
 	&__list
 		display: flex
-		gap: 60px
 		align-items: center
-		font-weight: 300
-		line-height: 22px
+		gap: 60px
+	&__btn
+		display: none
+	&__control
+		display: none
+	&__mobile-wrapper
+		display: flex
+
 .search
+	position: relative
 	height: 46px
 	display: flex
 	align-items: center
@@ -50,7 +57,7 @@
 		display: block
 		width: 70px
 		height: 100%
-		background-color: #F5F5F5
+		background-color: $light-grey
 		background-image: url('/img/search.svg')
 		background-repeat: no-repeat
 		background-position: center
@@ -59,6 +66,161 @@
 		border: none
 		border-radius: 20px
 	&__input
-		display: none
+		position: absolute
+		border: none
+		background-color: $light-grey
+		right: 0
+		top: 0
+		height: 100%
+		border-radius: 20px
+		transform: skaleX(0)
+		transform-origin: right
+		width: 0
 	&__close
 		display: none
+
+@media (max-width: 1000px)
+	// прячем разделы в каталог
+	.navigation
+		position: relative
+		&__btn
+			display: flex
+			align-items: center
+			border: none
+			background-color: $white
+			font-weight: inherit
+			gap: 8px
+			&::after
+				content: ''
+				display: block
+				width: 14px
+				height: 10px
+				background-image: url('/img/arrow.svg')
+				background-repeat: no-repeat
+				background-position: center
+		&__list
+			position: absolute
+			height: 0
+			overflow: hidden
+		&_active
+			// выпадающее меню
+			.navigation__list
+				height: auto
+				flex-direction: column
+				align-items: flex-start
+				background-color: $white
+				padding: 0px 13px 13px 10px
+				gap: 15px
+				top: 46px
+				left: -10px
+			.navigation__btn
+				&::after
+					transform: rotateX(180deg)
+		&__link
+			font-size: 14px
+			line-height: 17px
+
+@media (max-width: 760px)
+	//каталог превращаем в бургер(крестик)
+	.navigation
+		&__btn
+			position: relative
+			font-size: 0
+			width: 18px
+			height: 12px
+			&::after, &::before
+				content: ''
+				position: absolute
+				width: 100%
+				left: 0
+				height: 2px
+				background-color: $main-color
+			&::after
+				top: calc( 100% - 2px )
+			&::before
+				top: 0
+			&_line
+				position: absolute
+				left: 0
+				right: 0
+				top: 50%
+				height: 2px
+				transform: translateY(-50%) scale(1)
+				background-color: $main-color
+				transition: transform .24s ease
+			// превращение в крестик и сокрытие средней линии
+	.navigation_active
+		position: static
+		.navigation__btn
+
+			&::before
+				top: 50%
+				transform: rotate(45deg)
+				transition: transform .24s ease, top .24s ease
+			&::after
+				top: 50%
+				transform: rotate(-45deg)
+				transition: transform .24s ease, top .24s ease
+			.navigation__btn_line
+				transform: translateY(-50%) scale(0)
+	// меняем местами бургер и поиск(поиск спускается на вторую строку)
+	.header
+		&__container
+			display: grid
+			grid-template-columns: repeat(2, 1fr )
+			gap: 30px
+		&__logo
+
+		&__navigation
+			justify-self: end
+			align-items: center
+		&__search
+			width: 100%
+			grid-column: 1/3
+			justify-self: end
+		&__control
+			&-list
+				display: none
+
+	.navigation
+		&__control
+			display: flex
+			align-self: flex-end
+		&__mobile
+			&-wrapper
+				background-color: $white
+				position: absolute
+				display: none
+				top: 80px
+				right: 0px
+				gap: 30px
+				z-index: 999
+
+		&_active
+			.navigation__mobile-wrapper
+				width: 100%
+				padding: 20px 94px
+				display: flex
+				flex-direction: column
+			.navigation__list
+				justify-content: space-between
+				position: static
+				flex-direction: row
+				padding: 0
+
+	.search
+		&__button
+			border-radius: 0 12px 12px 0
+		&__input
+			position: static
+			transform: scaleX(1)
+			width: 100%
+			border-radius: 12px 0 0 12px
+			padding: 14px 15px 17px 15px
+			font-size: 12px
+
+@media (max-width: 500px)
+	.navigation
+		&_active
+			.navigation__mobile-wrapper
+				padding: 20px 20px
