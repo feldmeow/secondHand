@@ -1,0 +1,134 @@
+.footer
+  background-color: $main-color
+  color: $white
+  padding: 60px 0 100px
+  &__list
+    &-nav
+      display: grid
+      grid-template-columns: repeat(4,minmax(max-content,1fr))
+      grid-column-gap: 120px
+      margin-bottom: 100px
+
+    &-vertical
+      display: flex
+      gap: 18px
+      flex-direction: column
+    &-contacts
+      display: flex
+      gap: 40px
+      justify-content: center
+      margin-bottom: 70px
+  &__subtitle
+    font-size: 20px
+    line-height: 130%
+    text-transform: uppercase
+    font-weight: 400
+    margin-bottom: 27px
+    &::after
+      content: ''
+      display: none
+      width: 14px
+      height: 10px
+      background-image: url('/img/drop-white.svg')
+      background-repeat: no-repeat
+      background-position: center
+      margin-left: 6px
+  &__link
+    font-weight: 300
+    font-size: 16px
+    line-height: 20px
+    &_contact
+      font-size: 24px
+      line-height: 26px
+  &__agreement
+    display: block
+    font-size: 18px
+    line-height: 22px
+    text-align: center
+    text-decoration-line: underline
+
+@media (max-width: 1200px)
+  .footer
+    padding-bottom: 72px
+    &__list
+      &-nav
+        grid-column-gap: 44px
+        margin-bottom: 85px
+      &-contacts
+        margin-bottom: 50px
+
+@media (max-width: 1000px)
+  .footer
+    padding: 36px 0 58px
+    &__list
+      &-nav
+        grid-template-columns: repeat(2,minmax(max-content,1fr))
+        grid-column-gap: 100px
+        grid-row-gap: 50px
+        margin-bottom: 50px
+      &-contacts
+        margin-bottom: 50px
+      &-vertical
+        gap: 18px
+    &__link
+      font-size: 16px
+      line-height: 20px
+      &_contact
+        font-weight: 300
+        font-size: 18px
+        line-height: 26px
+    &__subtitle
+      font-size: 18px
+      line-height: 130%
+      margin-bottom: 15px
+
+@media (max-width: 760px)
+  .footer
+    &__list
+      &-nav
+        grid-column-gap: 40px
+    &__subtitle
+      font-size: 16px
+      margin-bottom: 30px
+    &__link
+      font-size: 14px
+      line-height: 17px
+      &_contact
+        font-size: 16px
+    &__agreement
+      font-size: 14px
+      line-height: 20px
+
+@media ( max-width: 630px )
+  .footer
+    &__list
+      &-nav
+        display: flex
+        flex-direction: column
+        gap: 0px
+        margin-bottom: 40px
+      &-vertical
+        height: 0
+        visibility: hidden
+      &-contacts
+        gap: 30px
+        margin-bottom: 40px
+        &-text
+          flex-direction: column
+          gap: 10px
+    &__subtitle
+      margin-bottom: 15px
+      &::after
+        display: inline-block
+    &__item
+      &-active
+        margin-bottom: 30px
+
+  .footer__item-active
+    .footer__list-vertical
+      height: auto
+      visibility: visible
+      gap: 15px
+  .footer__item-active
+    .footer__subtitle::after
+      transform: rotateX(180deg) translateY(25%)
