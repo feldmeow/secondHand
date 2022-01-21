@@ -476,18 +476,18 @@ p {
 
 .header__btn-cart {
   width: 24px;
-  background-image: url(/img/bag.svg);
+  background-image: url(../img/bag.svg);
 }
 
 .header__btn-fav {
   display: block;
-  background-image: url(/img/Vector.svg);
+  background-image: url(../img/Vector.svg);
 }
 
 .header__btn-acc {
   display: block;
   width: 22px;
-  background-image: url(/img/person.svg);
+  background-image: url(../img/person.svg);
 }
 
 .navigation {
@@ -544,7 +544,7 @@ p {
   width: 70px;
   height: 100%;
   background-color: #F5F5F5;
-  background-image: url("/img/search.svg");
+  background-image: url("../img/search.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 24px;
@@ -580,7 +580,7 @@ p {
   height: 12px;
   width: 12px;
   border: none;
-  background-image: url(/img/close_input.svg);
+  background-image: url(../img/close_input.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
@@ -647,7 +647,7 @@ p {
     display: block;
     width: 14px;
     height: 10px;
-    background-image: url("/img/arrow.svg");
+    background-image: url("../img/arrow.svg");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -1117,7 +1117,7 @@ p {
   display: none;
   width: 14px;
   height: 10px;
-  background-image: url("/img/drop-white.svg");
+  background-image: url("../img/drop-white.svg");
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 6px;
