@@ -4,6 +4,8 @@
 	&__container
 		display: flex
 		justify-content: space-between
+	&__logo
+		padding-right: 140px
 	&__navigation
 	&__control
 		&-list
@@ -39,21 +41,26 @@
 	line-height: 22px
 	&__list
 		display: flex
+		min-width: 385px
+		justify-content: space-between
 		align-items: center
-		gap: 60px
+
 	&__btn
 		display: none
 	&__control
 		display: none
 	&__mobile-wrapper
 		display: flex
+		padding-right: 150px
 
 .search
 	position: relative
 	height: 46px
 	display: flex
 	align-items: center
+	padding-right: 12px
 	&__button
+		position: relative
 		display: block
 		width: 70px
 		height: 100%
@@ -65,24 +72,64 @@
 		outline: none
 		border: none
 		border-radius: 20px
+		z-index: 2
 	&__input
 		position: absolute
 		border: none
-		background-color: $light-grey
-		right: 0
+		right: 35px
 		top: 0
 		height: 100%
-		border-radius: 20px
-		transform: skaleX(0)
+		width: 523px
+		transform: scaleX(0)
+		transition: transform 0.3s ease-in-out
 		transform-origin: right
-		width: 0
+		background-color: $light-grey
+		border-radius: 20px
 	&__close
-		display: none
+		position: absolute
+		top: 6px
+		right: -1px
+		height: 12px
+		width: 12px
+		border: none
+		background-image: url(/img/close_input.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-color: transparent
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.3s ease-in-out 0.1s
+		z-index: 3
+	&_active
+		.search__input
+			position: absolute
+			transform: scaleX(1) translateX(47px)
+			padding: 15px 30px
+
+		.search__close
+			visibility: visible
+			opacity: 0.4
+			&:hover
+				opacity: 1
+@media (max-width: 1110px)
+	.header
+		&__logo
+			padding-right: 100px
+@media (max-width: 1260px)
+	.navigation
+		&__mobile-wrapper
+			padding-right: 0
+		&__list
+			min-width: 345px
 
 @media (max-width: 1000px)
+	.header
+		&__logo
+			padding: 0
 	// прячем разделы в каталог
 	.navigation
 		position: relative
+		padding: 0
 		&__btn
 			display: flex
 			align-items: center
@@ -119,6 +166,10 @@
 		&__link
 			font-size: 14px
 			line-height: 17px
+
+	.search
+		&__input
+			width: 403px
 
 @media (max-width: 760px)
 	//каталог превращаем в бургер(крестик)
@@ -209,15 +260,18 @@
 				padding: 0
 
 	.search
-		&__button
+		padding: 0
+	.search_active
+		.search__button
 			border-radius: 0 12px 12px 0
-		&__input
+		.search__input
 			position: static
 			transform: scaleX(1)
 			width: 100%
 			border-radius: 12px 0 0 12px
-			padding: 14px 15px 17px 15px
 			font-size: 12px
+		.search__close
+			display: none
 
 @media (max-width: 500px)
 	.navigation
