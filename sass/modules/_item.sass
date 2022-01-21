@@ -1,0 +1,78 @@
+.item
+  position: relative
+  &__fav-btn
+    position: absolute
+    top: 20px
+    right: 20px
+    border: none
+    background-color: inherit
+    color: $white
+    transition: color .4s ease, opacity .4s ease
+    &:hover
+      color: $fav-active
+      opacity: 0.5
+    &:focus
+      color: $fav-active
+      opacity: 0.75
+  &__img
+    width: 280px
+    height: 330px
+    object-fit: cover
+    object-position: top
+    margin-bottom: 11px
+  &__control
+    &-wrapper
+      display: grid
+      grid-template-columns: 1fr 115px
+      grid-row-gap: 11px
+
+  &__title
+    color: $grey
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+  &__to-cart
+    background-color: $main-color
+    border: none
+    color: $white
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    padding: 7px 19px
+    transition: background-color .4s ease, color .4s ease
+    &:hover
+      background-color: $grey-btn
+    &:focus
+      background: #F5F5F5
+      border: 1px solid #272727
+      color: $main-color
+      padding: 6px 18px
+
+  &__price
+    color: $grey
+    font-weight: 500
+    font-size: 18px
+    line-height: 22px
+    gap: 10px
+    &-old
+      position: relative
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      &::before
+        content: ''
+        position: absolute
+        height: 0.9999999874306923px
+        width: 54.16676643952256px
+        left: -2px
+        top: 8px
+        transform: rotate(-4.34deg)
+        z-index: 5
+        background-color: $fav-active
+  &__description-btn
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    text-decoration-line: underline
+    background-color: $white
+    border: none

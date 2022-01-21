@@ -1,0 +1,24 @@
+.goods
+  padding: 40px 0 150px
+  &__list
+    display: grid
+    grid-template-columns: repeat( auto-fit, 280px)
+    grid-column-gap: 20px
+    grid-row-gap: 60px
+    justify-content: space-around
+
+@media (max-width: 1200px)
+  .goods
+    padding: 35px 0 130px
+
+@media (max-width: 1000px)
+  .goods
+    padding-bottom: 100px
+    &__list
+      grid-row-gap: 50px
+
+@media (max-width: 580px)
+  .goods
+    padding-bottom: 80px
+    &__list
+      grid-row-gap: 20px
