@@ -1,0 +1,63 @@
+.hero
+  padding: 60px 0 40px
+  &__slider
+    &-link
+      display: flex
+      align-items: end
+      width: 100%
+      min-height: 500px
+      padding: 70px 80px
+      background-color: $main-color
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+
+    &-title
+      max-width: min-content
+      font-size: 60px
+      line-height: 120%
+      font-weight: 400
+      text-transform: uppercase
+      color: $white
+
+@media (max-width: 1200px)
+  .hero
+    padding: 50px 0 35px
+    &__container
+      padding: 0
+    &__slider
+      &-link
+        padding: 80px 90px
+      &-title
+        font-size: 56px
+        line-height: 120%
+
+@media (max-width: 1000px)
+  .hero
+    padding: 50px 0 35px
+    &__slider
+      &-link
+        min-height: 531px
+        padding: 94px 81px
+      &-title
+        font-size: 44px
+        line-height: 120%
+
+@media (max-width: 760px)
+  .hero
+    &__slider
+      &-link
+        padding: 80px 80px
+      &-title
+        font-size: 38px
+
+@media (max-width: 580px)
+  .hero
+    padding: 30px 0 20px
+    &__slider
+      &-link
+        min-height: 400px
+        padding: 60px 20px
+      &-title
+        font-size: 30px
+        line-height: 110%
