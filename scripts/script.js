@@ -1,7 +1,7 @@
 import burgerMenu from './modules/burgerMenu.js';
 import searchControl from './modules/searchControl.js';
 import dropDown from './modules/dropDown.js';
-import slider from './modules/slider';
+import slider from './modules/slider.js';
 
 burgerMenu({
 	selectorMenu: '.navigation',
@@ -26,4 +26,5 @@ dropDown({
 	breakpoint: 630,
 });
 
+slider();
 document.addEventListener('click', (e) => e.preventDefault());
