@@ -2,6 +2,10 @@
   background-color: $main-color
   color: $white
   padding: 60px 0 100px
+  &__item
+    transition-duration: .2s
+    &:hover
+      opacity: 0.4
   &__list
     &-nav
       display: grid
@@ -46,6 +50,9 @@
     line-height: 22px
     text-align: center
     text-decoration-line: underline
+    transition-duration: .2s
+    &:hover
+      opacity: 0.4
 
 @media (max-width: 1200px)
   .footer

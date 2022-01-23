@@ -23,6 +23,9 @@
 		border: none
 		width: 26px
 		background-size: contain
+		transition-duration: .4s
+		&:hover
+			opacity: 0.4
 		&-cart
 			width: 24px
 			background-image: url(../img/bag.svg)
@@ -52,6 +55,22 @@
 	&__mobile-wrapper
 		display: flex
 		padding-right: 150px
+	&__item
+		position: relative
+		&::after
+			position: absolute
+			content: ''
+			background-color: $main-color
+			width: 100%
+			height: 1px
+			bottom: -15px
+			left: 0
+			transform-origin: center
+			transform: scaleX(0)
+			transition-duration: .3s
+		&:hover
+			&::after
+				transform: scaleX(1)
 
 .search
 	position: relative
@@ -153,6 +172,7 @@
 			// выпадающее меню
 			.navigation__list
 				height: auto
+				min-width: auto
 				flex-direction: column
 				align-items: flex-start
 				background-color: $white
