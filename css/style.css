@@ -594,10 +594,10 @@ p {
   width: 523px;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
   -webkit-transform-origin: right;
           transform-origin: right;
   background-color: #F5F5F5;
@@ -607,7 +607,7 @@ p {
 .search__close {
   position: absolute;
   top: 6px;
-  right: -1px;
+  right: 11px;
   height: 12px;
   width: 12px;
   border: none;
@@ -624,9 +624,11 @@ p {
 
 .search_active .search__input {
   position: absolute;
-  -webkit-transform: scaleX(1) translateX(47px);
-          transform: scaleX(1) translateX(47px);
+  -webkit-transform: scaleX(1) translateX(35px);
+          transform: scaleX(1) translateX(35px);
   padding: 15px 30px;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .search_active .search__close {
@@ -706,6 +708,10 @@ p {
   .navigation_active .navigation__btn::after {
     -webkit-transform: rotateX(180deg);
             transform: rotateX(180deg);
+  }
+  .navigation_active .navigation__item:hover::after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
   .navigation__link {
     font-size: 14px;
@@ -852,6 +858,9 @@ p {
     width: 100%;
     border-radius: 12px 0 0 12px;
     font-size: 12px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 0 15px;
   }
   .search .search__close {
     display: none;
@@ -1293,6 +1302,11 @@ p {
   }
   .footer__item-active {
     margin-bottom: 30px;
+  }
+  .footer__nav-item {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
   }
   .footer__item-active .footer__list-vertical {
     height: auto;
