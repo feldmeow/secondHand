@@ -26,5 +26,10 @@ dropDown({
 	breakpoint: 630,
 });
 
-slider();
+slider({
+	selectorSlider: '.hero__slider',
+	selectorPagination: '.hero__slider-pagination',
+	bulletClass: 'hero__slider-line',
+	bulletActiveClass: 'hero__slider-line_active',
+});
 document.addEventListener('click', (e) => e.preventDefault());
