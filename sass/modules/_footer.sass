@@ -116,7 +116,12 @@
         margin-bottom: 40px
       &-vertical
         height: 0
-        visibility: hidden
+        overflow: hidden
+        will-change: height
+        transition-duration: .6s
+        transform-origin: top
+        transform-style: ease
+        transform: scaleY(0)
       &-contacts
         gap: 30px
         margin-bottom: 40px
@@ -135,8 +140,8 @@
 
   .footer__item-active
     .footer__list-vertical
+      transform: scaleY(1)
       height: auto
-      visibility: visible
       gap: 15px
   .footer__item-active
     .footer__subtitle::after
