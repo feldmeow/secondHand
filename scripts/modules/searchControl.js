@@ -1,27 +1,35 @@
 const searchControl = ({
-	activateBtn,
-	closeBtn,
-	selectorSearch,
-	classActivate,
+	selectorBtn,
+	selectorClose,
+	selectorForm,
+	classActive,
 	searchInput,
+	breakpoint,
 }) => {
-	const btnActive = document.querySelector(activateBtn);
-	const btnClose = document.querySelector(closeBtn);
-	const searchForm = document.querySelector(selectorSearch);
+	const btn = document.querySelector(selectorBtn);
+	const close = document.querySelector(selectorClose);
+	const form = document.querySelector(selectorForm);
 	const input = document.querySelector(searchInput);
 
-	btnActive.addEventListener('click', () => {
-		searchForm.classList.add(classActivate);
-	});
-	btnClose.addEventListener('click', () => {
-		searchForm.classList.remove(classActivate);
+	const activateForm = () => {
+		form.classList.add(classActive);
+		btn.removeEventListener('click', activateForm);
+		btn.type = 'submit';
+	};
+
+	const deactivateForm = () => {
+		form.classList.remove(classActive);
+		btn.addEventListener('click', activateForm);
+		btn.type = 'button';
 		input.value = '';
-	});
-	document.addEventListener('click', (event) => {
-		if (!event.target.closest(selectorSearch)) {
-			searchForm.classList.remove(classActivate);
-		}
-	});
+	};
+
+	if (document.documentElement.clientWidth > breakpoint) {
+		btn.addEventListener('click', activateForm);
+		close.addEventListener('click', deactivateForm);
+	} else {
+		btn.type = 'submit';
+	}
 };
 
 export default searchControl;

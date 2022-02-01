@@ -2,6 +2,8 @@ import burgerMenu from './modules/burgerMenu.js';
 import searchControl from './modules/searchControl.js';
 import dropDown from './modules/dropDown.js';
 import slider from './modules/slider.js';
+import renderGoods from './modules/renderGoods.js';
+import interceptLink from './modules/interceptLink.js';
 
 burgerMenu({
 	selectorMenu: '.navigation',
@@ -12,11 +14,12 @@ burgerMenu({
 });
 
 searchControl({
-	activateBtn: '.search__button',
-	closeBtn: '.search__close',
-	selectorSearch: '.header__search',
-	classActivate: 'search_active',
+	selectorBtn: '.search__button',
+	selectorClose: '.search__close',
+	selectorForm: '.header__search',
+	classActive: 'search_active',
 	searchInput: '.search__input',
+	breakpoint: 760,
 });
 
 dropDown({
@@ -32,4 +35,6 @@ slider({
 	bulletClass: 'hero__slider-line',
 	bulletActiveClass: 'hero__slider-line_active',
 });
-document.addEventListener('click', (e) => e.preventDefault());
+
+renderGoods(location.search);
+interceptLink();
